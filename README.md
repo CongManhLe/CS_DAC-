@@ -1,10 +1,13 @@
 # CS_DAC_10bit_ihp
 
-This repository contains the design of a 10-bit Current-Steering Digital-to-Analog Converter (CS DAC)
-implemented using the IHP SG13G2 (130 nm BiCMOS) open-source PDK.
-The project includes schematic design, SPICE simulations, and layout generation using open-source EDA tools.
+This repository contains the design of a **10-bit Current-Steering Digital-to-Analog Converter (CS DAC)**  
+implemented using the **IHP SG13G2 (130 nm BiCMOS) open-source PDK**.
 
-## Project Structure
+The project includes schematic-level design, SPICE simulations, and basic layout generation using open-source EDA tools such as **xschem**, **ngspice**, and **KLayout**.
+
+---
+
+## 📁 Project Structure
 CS_DAC-/
 ├── Layout/
 │   ├── inverter.gds
@@ -31,14 +34,17 @@ CS_DAC-/
 │
 └── README.md
 
-# Tools Required
-xschem – schematic capture
-ngspice – circuit simulation
-KLayout – layout and GDS handling
-IHP SG13G2 PDK (open_pdks.ihp-sg13g2)
-Recommended: UNIC-CASS / IHP preconfigured environment.
+## 🛠 Tools Required
 
-Environment Setup
+- **xschem** – schematic capture  
+- **ngspice** – circuit simulation  
+- **KLayout** – layout and GDS handling  
+- **IHP SG13G2 PDK** (`open_pdks.ihp-sg13g2`)  
+
+Recommended: UNIC-CASS / IHP preconfigured environment.
+---
+## ⚙ Environment Setup
+
 $ wget https://gist.githubusercontent.com/duyhieubui/8acc0c43113360955c87877c626c7101/raw/9d5508963d69194422a9574
  adec820c8f5d4789e/ihp-open-pdk-setup-ubuntu-22.04.sh  -O ./ihp-open-pdk-setup-ubuntu-22.04.sh
 $ bash ./ihp-open-pdk-setup-ubuntu-22.04.sh
