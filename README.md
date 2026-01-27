@@ -7,33 +7,6 @@ The project includes schematic-level design, SPICE simulations, and basic layout
 
 ---
 
-## 📁 Project Structure
-CS_DAC-/
-├── Layout/
-│   ├── inverter.gds
-│   └── user_project_wrapper.gds
-│
-├── spice/
-│   ├── 4LSB.raw
-│   ├── 4LSB_Test.spice
-│   ├── 6MSB.raw
-│   ├── 6MSB_test.spice
-│   ├── CS_DAC_10b.raw
-│   ├── CS_DAC_10b_test.spice
-│   ├── Test_thermo.spice
-│   └── ....
-│
-├── xschem/
-│   ├── 4MSB_weighted.sch
-│   ├── 4MSB_weighted.sym
-│   ├── 6MSB.sch
-│   ├── 6MSB.sym
-│   ├── CS_DAC_10b.sch
-│   ├── CS_DAC_10b.sym
-│   └── .....
-│
-└── README.md
-
 ## 🛠 Tools Required
 
 - **xschem** – schematic capture  
