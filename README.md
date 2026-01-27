@@ -39,9 +39,8 @@ IHP SG13G2 PDK (open_pdks.ihp-sg13g2)
 Recommended: UNIC-CASS / IHP preconfigured environment.
 
 Environment Setup
-$ wget
-https://gist.githubusercontent.com/duyhieubui/8acc0c43113360955c87877c626c7101/raw/9d5508963d69194422a9574
-adec820c8f5d4789e/ihp-open-pdk-setup-ubuntu-22.04.sh  -O ./ihp-open-pdk-setup-ubuntu-22.04.sh
+$ wget https://gist.githubusercontent.com/duyhieubui/8acc0c43113360955c87877c626c7101/raw/9d5508963d69194422a9574
+ adec820c8f5d4789e/ihp-open-pdk-setup-ubuntu-22.04.sh  -O ./ihp-open-pdk-setup-ubuntu-22.04.sh
 $ bash ./ihp-open-pdk-setup-ubuntu-22.04.sh
 
 Before working with the project:
