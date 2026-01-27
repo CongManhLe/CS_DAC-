@@ -4,7 +4,7 @@ This repository contains the design of a 10-bit Current-Steering Digital-to-Anal
 implemented using the IHP SG13G2 (130 nm BiCMOS) open-source PDK.
 The project includes schematic design, SPICE simulations, and layout generation using open-source EDA tools.
 
-# Project Structure
+## Project Structure
 CS_DAC-/
 ├── Layout/
 │   ├── inverter.gds
