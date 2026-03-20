@@ -1,10 +1,137 @@
-v {xschem version=3.4.5 file_version=1.2}
-K {type=subcircuit
-format="@name @pinlist @symname"
-template="name=x1
+v {xschem version=3.4.5 file_version=1.2
+}
+G {}
+K {}
+V {}
+S {}
+E {}
+N 110 -280 170 -280 {
+lab=X1}
+N 110 -240 170 -240 {
+lab=X2}
+N 110 -220 170 -220 {
+lab=X3}
+N 110 -140 170 -140 {
+lab=X7}
+N 110 -120 170 -120 {
+lab=X8}
+N 110 -100 170 -100 {
+lab=X9}
+N 110 -200 170 -200 {
+lab=X4}
+N 110 -180 170 -180 {
+lab=X5}
+N 110 -160 170 -160 {
+lab=X6}
+N 1020 -270 1020 -210 {
+lab=GND}
+N 1020 -430 1020 -330 {
+lab=#net1}
+N 940 -430 1020 -430 {
+lab=#net1}
+N 820 -500 1020 -500 {
+lab=#net1}
+N 1020 -500 1020 -430 {
+lab=#net1}
+N 470 -500 470 -340 {
+lab=#net2}
+N 470 -500 760 -500 {
+lab=#net2}
+N 550 -430 880 -430 {
+lab=#net3}
+N 470 -320 550 -320 {
+lab=#net3}
+N 550 -430 550 -320 {
+lab=#net3}
+N 110 -260 170 -260 {
+lab=X10}
+C {vsource.sym} -180 -260 0 0 {name=V1 value=1 savecurrent=false}
+C {lab_wire.sym} -180 -290 0 0 {name=p12 sig_type=std_logic lab=VDD}
+C {gnd.sym} -180 -230 0 0 {name=l1 lab=GND}
+C {vsource.sym} -110 -260 0 0 {name=V3 value=1 savecurrent=false}
+C {lab_wire.sym} -110 -290 0 0 {name=p14 sig_type=std_logic lab=VBIAS}
+C {gnd.sym} -110 -230 0 0 {name=l2 lab=GND}
+C {vsource.sym} -900 -180 0 0 {name=V2 value="PULSE(0 1 0n 5n 5n 20n 50n)" savecurrent=false}
+C {lab_wire.sym} 170 -340 0 0 {name=p9 sig_type=std_logic lab=CLK}
+C {gnd.sym} -900 -150 0 0 {name=l3 lab=GND}
+C {vsource.sym} -660 -310 0 0 {name=V4 value="PULSE(0 1 0 5n 5n 45n 100n)" savecurrent=false}
+C {lab_wire.sym} -660 -340 0 0 {name=p10 sig_type=std_logic lab=X1}
+C {gnd.sym} -660 -280 0 0 {name=l6 lab=GND}
+C {vsource.sym} -450 -310 0 0 {name=V5 value="PULSE(0 1 0 5n 5n 95n 200n)" savecurrent=false}
+C {lab_wire.sym} -450 -340 0 0 {name=p11 sig_type=std_logic lab=X2}
+C {gnd.sym} -450 -280 0 0 {name=l7 lab=GND}
+C {vsource.sym} -620 -180 0 0 {name=V6 value="PULSE(0 1 0 5n 5n 195n 400n)" savecurrent=false}
+C {lab_wire.sym} -620 -210 0 0 {name=p13 sig_type=std_logic lab=X3}
+C {gnd.sym} -620 -150 0 0 {name=l8 lab=GND}
+C {vsource.sym} -450 -180 0 0 {name=V7 value="PULSE(0 1 0 5n 5n 395n 800n)" savecurrent=false}
+C {lab_wire.sym} -450 -210 0 0 {name=p15 sig_type=std_logic lab=X4}
+C {gnd.sym} -450 -150 0 0 {name=l9 lab=GND}
+C {vsource.sym} -630 -60 0 0 {name=V8 value="PULSE(0 1 0 5n 5n 795n 1600n)" savecurrent=false}
+C {lab_wire.sym} -630 -90 0 0 {name=p20 sig_type=std_logic lab=X5}
+C {gnd.sym} -630 -30 0 0 {name=l13 lab=GND}
+C {vsource.sym} -440 -60 0 0 {name=V9 value="PULSE(0 1 0 5n 5n 1595n 3200n)" savecurrent=false}
+C {gnd.sym} -440 -30 0 0 {name=V12 value="PULSE(0 3.3 0 1n 1n 159n 320n)" savecurrent=false}
+C {lab_wire.sym} -440 -90 0 0 {name=p21 sig_type=std_logic lab=X6}
+C {lab_wire.sym} 110 -280 0 0 {name=p1 sig_type=std_logic lab=X1}
+C {lab_wire.sym} 110 -260 0 0 {name=p2 sig_type=std_logic lab=X10}
+C {lab_wire.sym} 110 -220 0 0 {name=p3 sig_type=std_logic lab=X3}
+C {lab_wire.sym} 170 -320 0 0 {name=p18 sig_type=std_logic lab=VBIAS}
+C {lab_wire.sym} 170 -300 0 0 {name=p19 sig_type=std_logic lab=VDD}
+C {code_shown.sym} 20 -620 0 0 {name=NGSPICE only_toplevel=false value="
+.save  i(Vd) i(Vd1) 
+.control 
+set wr_vecnames
+set wr_singlescale
+tran 1n 51200n
+run
+write CS_DAC_10b.raw i(Vd) i(Vd1) 
+.endc
+"}
+C {lab_wire.sym} 110 -140 0 0 {name=p7 sig_type=std_logic lab=X7}
+C {lab_wire.sym} 110 -120 0 0 {name=p8 sig_type=std_logic lab=X8}
+C {lab_wire.sym} 110 -100 0 0 {name=p16 sig_type=std_logic lab=X9}
+C {lab_wire.sym} 110 -200 0 0 {name=p4 sig_type=std_logic lab=X4}
+C {lab_wire.sym} 110 -180 0 0 {name=p5 sig_type=std_logic lab=X5}
+C {lab_wire.sym} 110 -160 0 0 {name=p6 sig_type=std_logic lab=X6}
+C {vsource.sym} -630 100 0 0 {name=V13 value="PULSE(0 1 0 5n 5n 3195n 6400n)" savecurrent=false}
+C {gnd.sym} -630 130 0 0 {name=V14 value="PULSE(0 3.3 0 1n 1n 159n 320n)" savecurrent=false}
+C {lab_wire.sym} -630 70 0 0 {name=p29 sig_type=std_logic lab=X7}
+C {vsource.sym} -410 110 0 0 {name=V15 value="PULSE(0 1 0 5n 5n 6395n 12800n)" savecurrent=false}
+C {gnd.sym} -410 140 0 0 {name=V16 value="PULSE(0 3.3 0 1n 1n 159n 320n)" savecurrent=false}
+C {lab_wire.sym} -410 80 0 0 {name=p30 sig_type=std_logic lab=X8}
+C {vsource.sym} -630 260 0 0 {name=V17 value="PULSE(0 1 0 1n 1n 12795n 25600n)" savecurrent=false}
+C {gnd.sym} -630 290 0 0 {name=V18 value="PULSE(0 3.3 0 1n 1n 159n 320n)" savecurrent=false}
+C {lab_wire.sym} -630 230 0 0 {name=p31 sig_type=std_logic lab=X9}
+C {vsource.sym} -410 250 0 0 {name=V19 value="PULSE(0 1 0 1n 1n 25595n 51200n)" savecurrent=false}
+C {gnd.sym} -410 280 0 0 {name=V20 value="PULSE(0 3.3 0 1n 1n 159n 320n)" savecurrent=false}
+C {lab_wire.sym} -410 220 0 0 {name=p32 sig_type=std_logic lab=X10}
+C {lab_wire.sym} -900 -210 0 0 {name=p22 sig_type=std_logic lab=CLK}
+C {devices/vsource.sym} 1020 -300 0 0 {name=Vds value=1.5}
+C {devices/gnd.sym} 1020 -210 0 0 {name=l5 lab=GND}
+C {devices/ammeter.sym} 790 -500 1 0 {name=Vd}
+C {devices/ammeter.sym} 910 -430 1 0 {name=Vd1}
+C {simulator_commands_shown.sym} -920 -520 0 0 {
+name=Libs_Ngspice
+simulator=ngspice
+only_toplevel=false
+value="
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt
+.lib cornerHBT.lib hbt_typ
+.lib cornerRES.lib res_typ
+.lib cornerDIO.lib dio_tt
+.include /home/ducluong/unic-cass/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+"
+      }
+C {devices/gnd.sym} 470 -300 0 0 {name=l4 lab=GND}
+C {lab_wire.sym} 110 -240 0 0 {name=p17 sig_type=std_logic lab=X2}
+C {vsource.sym} -900 -310 0 0 {name=V10 value="PULSE(1 0 0 5n 5n 45n 100n)" savecurrent=false}
+C {lab_wire.sym} -900 -340 0 0 {name=p24 sig_type=std_logic lab=X}
+C {gnd.sym} -900 -280 0 0 {name=l10 lab=GND}
+C {CS_DAC_10b.sym} 320 -220 0 0 {name=x2
 schematic=CS_DAC_10b_pex
 spice_sym_def=
-\\"
+"
 .subckt CS_DAC_10b_pex CLK VDD VSS X1 X10 X2 X3 X4 X5 X6 X7 X8 X9
 X0 a_20738_20217.t2 a_n2044_4040.t13 a_20839_20514.t1 VSS.t3545 sg13_lv_nmos ad=0.2448p pd=2.12u as=0.1368p ps=1.1u w=0.72u l=0.13u
 X1 a_24729_11890.t0 a_24639_11794# VSS.t450 VSS.t3119 sg13_hv_nmos ad=0.1235p pd=1.03u as=0.1235p ps=1.03u w=0.65u l=0.45u
@@ -43256,60 +43383,5 @@ C9213 X10.n3 VSS 0.73474f $ **FLOATING
 C9214 X10.t5 VSS 0.54059f $ **FLOATING
 C9215 X10.n4 VSS 0.99391f $ **FLOATING
 .ends
-\\"
 "
 }
-T {@symname} -63 -6 0 0 0.3 0.3 {}
-T {@name} 135 -142 0 0 0.2 0.2 {}
-L 4 -130 -130 130 -130 {}
-L 4 -130 130 130 130 {}
-L 4 -130 -130 -130 130 {}
-L 4 130 -130 130 130 {}
-B 5 -152.5 -122.5 -147.5 -117.5 {name=CLK dir=in}
-L 4 -150 -120 -130 -120 {}
-T {CLK} -125 -124 0 0 0.2 0.2 {}
-B 5 147.5 -122.5 152.5 -117.5 {name=OUTN dir=inout}
-L 7 130 -120 150 -120 {}
-T {OUTN} 125 -124 0 1 0.2 0.2 {}
-B 5 147.5 -102.5 152.5 -97.5 {name=OUTP dir=inout}
-L 7 130 -100 150 -100 {}
-T {OUTP} 125 -104 0 1 0.2 0.2 {}
-B 5 -152.5 -102.5 -147.5 -97.5 {name=VBIAS dir=in}
-L 4 -150 -100 -130 -100 {}
-T {VBIAS} -125 -104 0 0 0.2 0.2 {}
-B 5 -152.5 -82.5 -147.5 -77.5 {name=VDD dir=in}
-L 4 -150 -80 -130 -80 {}
-T {VDD} -125 -84 0 0 0.2 0.2 {}
-B 5 147.5 -82.5 152.5 -77.5 {name=VSS dir=inout}
-L 7 130 -80 150 -80 {}
-T {VSS} 125 -84 0 1 0.2 0.2 {}
-B 5 -152.5 -62.5 -147.5 -57.5 {name=X1 dir=in}
-L 4 -150 -60 -130 -60 {}
-T {X1} -125 -64 0 0 0.2 0.2 {}
-B 5 -152.5 -42.5 -147.5 -37.5 {name=X10 dir=in}
-L 4 -150 -40 -130 -40 {}
-T {X10} -125 -44 0 0 0.2 0.2 {}
-B 5 -152.5 -22.5 -147.5 -17.5 {name=X2 dir=in}
-L 4 -150 -20 -130 -20 {}
-T {X2} -125 -24 0 0 0.2 0.2 {}
-B 5 -152.5 -2.5 -147.5 2.5 {name=X3 dir=in}
-L 4 -150 0 -130 0 {}
-T {X3} -125 -4 0 0 0.2 0.2 {}
-B 5 -152.5 17.5 -147.5 22.5 {name=X4 dir=in}
-L 4 -150 20 -130 20 {}
-T {X4} -125 16 0 0 0.2 0.2 {}
-B 5 -152.5 37.5 -147.5 42.5 {name=X5 dir=in}
-L 4 -150 40 -130 40 {}
-T {X5} -125 36 0 0 0.2 0.2 {}
-B 5 -152.5 57.5 -147.5 62.5 {name=X6 dir=in}
-L 4 -150 60 -130 60 {}
-T {X6} -125 56 0 0 0.2 0.2 {}
-B 5 -152.5 77.5 -147.5 82.5 {name=X7 dir=in}
-L 4 -150 80 -130 80 {}
-T {X7} -125 76 0 0 0.2 0.2 {}
-B 5 -152.5 97.5 -147.5 102.5 {name=X8 dir=in}
-L 4 -150 100 -130 100 {}
-T {X8} -125 96 0 0 0.2 0.2 {}
-B 5 -152.5 117.5 -147.5 122.5 {name=X9 dir=in}
-L 4 -150 120 -130 120 {}
-T {X9} -125 116 0 0 0.2 0.2 {}
